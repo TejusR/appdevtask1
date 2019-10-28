@@ -8,24 +8,24 @@ import android.widget.Button;
 import android.widget.EditText;
 
 public class MainActivity extends AppCompatActivity {
-    EditText n,x1;
+    EditText age, max_guess;
     Button submit;
     Button stat;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        n=(EditText) findViewById(R.id.editText);
-        x1=(EditText) findViewById(R.id.editText3);
+        age=(EditText) findViewById(R.id.editText);
+        max_guess=(EditText) findViewById(R.id.editText3);
         submit=(Button) findViewById(R.id.button);
         stat=(Button) findViewById(R.id.button4);
         submit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Integer num=Integer.parseInt(n.getText().toString());
+                Integer num=Integer.parseInt(age.getText().toString());
                 Intent myintent=new Intent(MainActivity.this,Main2Activity.class);
                 myintent.putExtra("number",num);
-                myintent.putExtra("tries",Integer.parseInt(x1.getText().toString()));
+                myintent.putExtra("tries",Integer.parseInt(max_guess.getText().toString()));
                 startActivity(myintent);
             }
         });
